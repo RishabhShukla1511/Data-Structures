@@ -1,4 +1,4 @@
-# Data Strctures
+# Data Structures
 Implementation of Data Structures
 
 ## Contribution
