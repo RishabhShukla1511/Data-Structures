@@ -46,6 +46,14 @@ int* createST(int arr[],int n)
     return st;
 }
 
+void print(int *st,int max_size)
+{
+    cout << "The Sum Tree is:\n";
+    for(int i=0;i<max_size;i++)
+        cout << st[i] << " ";
+    cout << '\n';
+}
+
 int main()
 {
     int n;
@@ -56,11 +64,9 @@ int main()
     for(int i=0;i<n;i++)
         cin >> arr[i];
     int *st=createST(arr,n);
-    for(int i=0;i<2*pow(2,ceil(log2(n)))-1;i++)
-        cout << st[i] << " ";
-    cout << '\n';
+    print(st,2*pow(2,ceil(log2(n)))-1);
     int start,end;
     cout << "Enter the start and end position of the sum query\n";
     cin >> start >> end;
-    cout << getsum(st,n,start,end);
+    cout << "Sum of array from position " << start << " to " << "position " << end << " is " << getsum(st,n,start-1,end-1);
 }
